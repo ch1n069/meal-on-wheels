@@ -11,13 +11,16 @@ const BackDrop = (props) => {
 const ModalOverLay = (props) => {
   return <div className={styles.modal}>{props.children}</div>;
 };
+// this specifies in which div our modal is going to be rendered in
+const portalElement = document.getElementById('overlays')
 const Modal = (props) => {
   return (
 <Fragment>
     {/* create a portal for both overlays and the backdrop */}
     {/* by creating portals means that the content will be rendered outside of the dom */}
-    {ReactDOM.createPortal(<BackDrop/>)}
-    {ReactDOM.createPortal(<ModalOverLay>{props.children}</ModalOverLay>)}
+    {/* and passing the div for the modals */}
+    {ReactDOM.createPortal(<BackDrop/>, portalElement)}
+    {ReactDOM.createPortal(<ModalOverLay>{props.children}</ModalOverLay>, portalElement)}
 
 </Fragment>
 );
