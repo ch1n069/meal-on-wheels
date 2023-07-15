@@ -3,7 +3,7 @@ import styles from "./MealItemForm.module.css";
 import Input from "../../UI/Input";
 const MealItemForm = (props) => {
   return (
-    <div>
+    <div className={styles.form}>
       <form>
         <Input
           label="Amount"
@@ -16,7 +16,7 @@ const MealItemForm = (props) => {
             defaultValue: "1",
           }}
         />
-        <bUtton>add to cart</bUtton>
+        <button className={styles.button}>add to cart</button>
       </form>
     </div>
   );
