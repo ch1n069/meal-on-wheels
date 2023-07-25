@@ -22,7 +22,7 @@ function App() {
   return (
     <Fragment>
       {/* if the statement is falsy dont render but if the statement is not falsey then render this compeonnent */}
-      {cartIsShown && <Cart />}
+      {cartIsShown && <Cart onHideCart={hideCartHandler} />}
 
       <Header onShowCart={showCartHandler} />
 

@@ -3,7 +3,7 @@ import styles from "./Modal.module.css";
 import ReactDOM from "react-dom";
 import { Fragment } from "react";
 const BackDrop = (props) => {
-  return <div className={styles.backdrop}></div>;
+  return <div className={styles.backdrop} onClick={props.onClose}></div>;
 };
 
 // this is the function that will receive what goes into the fragment
@@ -23,7 +23,10 @@ const Modal = (props) => {
       {/* create a portal for both overlays and the backdrop */}
       {/* by creating portals means that the content will be rendered outside of the dom */}
       {/* and passing the div for the modals */}
-      {ReactDOM.createPortal(<BackDrop />, portalElement)}
+      {ReactDOM.createPortal(
+        <BackDrop onClose={props.onClose} />,
+        portalElement
+      )}
       {ReactDOM.createPortal(
         <ModalOverLay>{props.children}</ModalOverLay>,
         portalElement
