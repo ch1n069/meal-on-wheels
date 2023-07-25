@@ -8,7 +8,7 @@ const Header = (props) => {
   return (
     <Fragment>
       <header className={styles.header}>
-        <HeaderCartButton />
+        <HeaderCartButton onClick={props.showCartHandler} />
       </header>
       {/* <div className={styles.main_image}>
         <img

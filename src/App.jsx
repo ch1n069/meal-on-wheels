@@ -8,12 +8,23 @@ import Meals from "./components/Meals/Meals";
 import Cart from "./components/Cart/Cart";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [cartIsShown, setCartIsShown] = useState(false);
+
+  // function used to show the cart
+  const showCartHandler = () => {
+    setCartIsShown(true);
+  };
+  // function used to hide the cart conditionally
+  const hideCartHandler = () => {
+    setCartIsShown(false);
+  };
 
   return (
     <Fragment>
-      <Cart />
-      <Header />
+      {/* if the statement is falsy dont render but if the statement is not falsey then render this compeonnent */}
+      {cartIsShown && <Cart />}
+
+      <Header onShowCart={showCartHandler} />
 
       <main>
         <Meals />
