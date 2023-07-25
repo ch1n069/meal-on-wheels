@@ -8,6 +8,12 @@
   background-color: rgba(0, 0, 0, 0.75);
 }
 
+.content {
+  align-items: flex-end;
+  border: "2px solid red";
+  color: "red";
+}
+
 .modal {
   position: fixed;
   top: 20vh;

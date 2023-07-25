@@ -11,20 +11,18 @@ const Cart = (props) => {
   );
   return (
     <Modal>
-      <div>
-        {cartItems}
-        <div className={styles.total}>
-          <span>Total amount</span>
-          <span>35.62</span>
-        </div>
-        <div className={styles.actions}>
-          <button className={styles["button--alt"]} type="">
-            Close
-          </button>
-          <button className={styles.button} type="">
-            Order
-          </button>
-        </div>
+      {cartItems}
+      <div className={styles.total}>
+        <span>Total amount</span>
+        <span>35.62</span>
+      </div>
+      <div className={styles.actions}>
+        <button className={styles["button--alt"]} type="">
+          Close
+        </button>
+        <button className={styles.button} type="">
+          Order
+        </button>
       </div>
     </Modal>
   );
